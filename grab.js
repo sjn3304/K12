@@ -13,7 +13,7 @@ function ensurePanel(){
   if(existing)existing.remove();
   panel=document.createElement("div");
   panel.id="wonder-cart-grabber-panel";
-  panel.style.cssText="position:fixed;right:14px;bottom:14px;z-index:2147483647;width:min(320px,calc(100vw - 28px));background:#191918;color:#f8fafc;border:1px solid #383838;border-radius:14px;box-shadow:0 18px 44px rgba(0,0,0,.42);font:13px/1.45 -apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;overflow:hidden";
+  panel.style.cssText="position:fixed;right:14px;bottom:14px;z-index:2147483647;width:min(320px,calc(100vw - 28px));background:#111827;color:#f8fafc;border:1px solid #334155;border-radius:14px;box-shadow:0 18px 44px rgba(0,0,0,.5);font:13px/1.45 Arial,sans-serif;letter-spacing:0;overflow:hidden";
   panel.innerHTML=''+
     '<div style="display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 12px 8px">'+
       '<div style="display:flex;align-items:center;gap:10px"><div style="display:grid;place-items:center;width:34px;height:34px;background:#fff;color:#135ce8;border-radius:8px;font-weight:900;font-size:13px;box-shadow:inset 0 -4px 0 #135ce8">K12</div><div><div style="font-weight:700;font-size:15px;color:#2563e8">K12 Cart Grabber</div><div id="wonder-cart-grabber-status" style="color:#9299a5;font-size:12px">Ready to grab this cart.</div></div></div>'+
@@ -43,7 +43,7 @@ function setBusy(busy){
 function setStatus(msg,kind){
   if(!statusEl)return;
   statusEl.textContent=msg;
-  statusEl.style.color=kind==="error"?"#b42318":kind==="ok"?"#0f6b3d":"#657384";
+  statusEl.style.color=kind==="error"?"#f87171":kind==="ok"?"#4ade80":"#cbd5e1";
 }
 
 function showError(msg){
@@ -60,9 +60,9 @@ function showCode(code,count,name){
   resultEl.style.display="grid";
   resultEl.style.gap="8px";
   resultEl.innerHTML=''+
-    '<div style="color:#657384;font-size:12px">'+escapeHtml(String(count))+' item'+(count===1?'':'s')+' from '+escapeHtml(name||"Wonder")+'</div>'+
-    '<div style="font:22px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:2px;background:#f2f5f8;color:#0b2f6b;border:1px solid #dde3ea;border-radius:6px;padding:10px;text-align:center;user-select:all">'+escapeHtml(code)+'</div>'+
-    '<button id="wonder-cart-grabber-copy" type="button" style="min-height:34px;border:1px solid #dde3ea;border-radius:6px;background:#fff;color:#16202a;font-weight:700;cursor:pointer">Copy code</button>';
+    '<div style="color:#cbd5e1;font-weight:600;font-size:12px">'+escapeHtml(String(count))+' item'+(count===1?'':'s')+' from '+escapeHtml(name||"Wonder")+'</div>'+
+    '<div style="font:22px Arial,sans-serif;font-weight:800;letter-spacing:3px;background:#f8fafc;color:#123a73;border:1px solid #93c5fd;border-radius:8px;padding:12px;text-align:center;user-select:all">'+escapeHtml(code)+'</div>'+
+    '<button id="wonder-cart-grabber-copy" type="button" style="min-height:38px;border:1px solid #93c5fd;border-radius:8px;background:#eaf2ff;color:#123a73;font-size:13px;font-weight:800;cursor:pointer">Copy code</button>';
   copyBtn=resultEl.querySelector("#wonder-cart-grabber-copy");
   copyBtn.onclick=function(){
     copyText(code).then(function(){
