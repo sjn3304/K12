@@ -13,16 +13,17 @@ function ensurePanel(){
   if(existing)existing.remove();
   panel=document.createElement("div");
   panel.id="wonder-cart-grabber-panel";
-  panel.style.cssText="position:fixed;right:14px;bottom:14px;z-index:2147483647;width:min(360px,calc(100vw - 28px));background:#fff;color:#16202a;border:1px solid #dde3ea;border-radius:8px;box-shadow:0 18px 44px rgba(15,23,42,.24);font:13px/1.45 -apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;overflow:hidden";
+  panel.style.cssText="position:fixed;right:14px;bottom:14px;z-index:2147483647;width:min(320px,calc(100vw - 28px));background:#191918;color:#f8fafc;border:1px solid #383838;border-radius:14px;box-shadow:0 18px 44px rgba(0,0,0,.42);font:13px/1.45 -apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;overflow:hidden";
   panel.innerHTML=''+
     '<div style="display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 12px 8px">'+
-      '<div><div style="font-weight:700;font-size:15px">Wonder Cart Grabber</div><div id="wonder-cart-grabber-status" style="color:#657384;font-size:12px">Ready to grab this cart.</div></div>'+
+      '<div style="display:flex;align-items:center;gap:10px"><div style="display:grid;place-items:center;width:34px;height:34px;background:#fff;color:#135ce8;border-radius:8px;font-weight:900;font-size:13px;box-shadow:inset 0 -4px 0 #135ce8">K12</div><div><div style="font-weight:700;font-size:15px;color:#2563e8">K12 Cart Grabber</div><div id="wonder-cart-grabber-status" style="color:#9299a5;font-size:12px">Ready to grab this cart.</div></div></div>'+
       '<button id="wonder-cart-grabber-close" type="button" style="border:1px solid #dde3ea;background:#fff;color:#16202a;border-radius:6px;width:30px;height:30px;font-size:18px;line-height:1;cursor:pointer">x</button>'+
     '</div>'+
     '<div style="display:grid;gap:10px;padding:0 12px 12px">'+
-      '<button id="wonder-cart-grabber-action" type="button" style="min-height:38px;border:0;border-radius:6px;background:#1463ff;color:#fff;font-weight:700;cursor:pointer">Grab cart</button>'+
+      '<button id="wonder-cart-grabber-action" type="button" style="min-height:38px;border:0;border-radius:6px;background:#1463ff;color:#fff;font-weight:700;cursor:pointer">Grab my cart</button>'+
       '<div id="wonder-cart-grabber-result" style="display:none;border-top:1px solid #dde3ea;padding-top:10px"></div>'+
-    '</div>';
+    '</div>'+
+'<div style="border-top:1px solid #383838;padding:9px 14px;text-align:center;color:#b9c0ca;font-size:11px">K12 Tutoring · paste this code in the bot.</div>';
   document.body.appendChild(panel);
   statusEl=panel.querySelector("#wonder-cart-grabber-status");
   actionBtn=panel.querySelector("#wonder-cart-grabber-action");
