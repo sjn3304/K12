@@ -61,7 +61,7 @@ function showCode(code,count,name){
   resultEl.style.gap="8px";
   resultEl.innerHTML=''+
     '<div style="color:#657384;font-size:12px">'+escapeHtml(String(count))+' item'+(count===1?'':'s')+' from '+escapeHtml(name||"Wonder")+'</div>'+
-    '<div style="font:22px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:2px;background:#f2f5f8;border:1px solid #dde3ea;border-radius:6px;padding:10px;text-align:center;user-select:all">'+escapeHtml(code)+'</div>'+
+    '<div style="font:22px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:2px;background:#f2f5f8;color:#0b2f6b;border:1px solid #dde3ea;border-radius:6px;padding:10px;text-align:center;user-select:all">'+escapeHtml(code)+'</div>'+
     '<button id="wonder-cart-grabber-copy" type="button" style="min-height:34px;border:1px solid #dde3ea;border-radius:6px;background:#fff;color:#16202a;font-weight:700;cursor:pointer">Copy code</button>';
   copyBtn=resultEl.querySelector("#wonder-cart-grabber-copy");
   copyBtn.onclick=function(){
